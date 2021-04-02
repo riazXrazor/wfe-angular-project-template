@@ -1,0 +1,5 @@
+{
+    "SEARCH_KEY_DATA_NOT_ENOUGH":"Sorry, that's not enough information to specify an address.",
+    "LONG_SEARCH_KEY":"Your search text is Too long. Please verify the text",
+    "BLANK_SEARCH_KEY":"Please enter any search keyword"
+}

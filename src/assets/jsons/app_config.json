@@ -1,0 +1,9 @@
+{
+    "isSingleCondition": false,
+    "singleApiKey": false,
+    "navigateStepName": true,
+    "multipleErrorMessage": true,
+    "API_TYPE": "EXTERNAL",
+    "applicationServicesUrl": "",
+    "BASE_PATH": ""
+}

@@ -1,0 +1,136 @@
+@mixin linx($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@mixin typograph($weight: "normal", $family, $size: $font-base, $color: "#333333", $lineHeight: 1) {
+  font-size: $size;
+  color: $color;
+  line-height: $lineHeight;
+  font-weight: $weight;
+  font-family: $family;
+}
+
+@mixin gradient($deg, $startColor, $endColor) {
+  background: transparent linear-gradient(90deg, #ffffff 0%, #f0f3f7 1%, #f0f3f7 96%, #f0f3f7 100%) 0% 0% no-repeat
+    padding-box;
+}
+
+@mixin radio-style($dimension) {
+  .custom-radio {
+    @extend %base-class-custom-radio-input;
+    label {
+      @extend %base-class-radio-label;
+      @each $prop, $value in $dimension {
+        #{$prop}: $value;
+      }
+    }
+  }
+}
+
+%base-class-custom-radio-input {
+  padding-left: 0;
+  input:checked + label {
+    color: #ffffff;
+    background-color: #3c6dc2;
+  }
+  .custom-control-label::after,
+  .custom-control-label::before {
+    display: none;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after {
+    visibility: hidden;
+  }
+}
+
+%base-class-radio-label {
+  position: relative;
+  color: #000000;
+  background-color: #f0f3f7;
+  text-align: center;
+  //line-height: 150px;
+  display: block;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: -11px -8px 10px #ffffff, 8px 8px 10px #d4d4d4;
+  border-radius: 20px;
+  font-family: "Century Gothic-bold";
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+@mixin checkbox-style($dimension) {
+  .custom-checkbox {
+    @extend %base-class-custom-checkbox-input;
+    label {
+      @extend %base-class-checkbox-label;
+      @each $prop, $value in $dimension {
+        #{$prop}: $value;
+      }
+    }
+  }
+}
+
+%base-class-custom-checkbox-input {
+  padding-left: 0;
+  float: left;
+  margin-top: 3%;
+  margin-right: 2%;
+  input:checked + label {
+    color: #ffffff;
+    background-color: #3c6dc2;
+  }
+  .custom-control-label::after,
+  .custom-control-label::before {
+    display: none;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after {
+    visibility: hidden;
+  }
+}
+
+%base-class-checkbox-label {
+  position: relative;
+  color: #000000;
+  background-color: #f0f3f7;
+  text-align: center;
+  //line-height: 150px;
+  display: block;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: -11px -8px 10px #f7f7f7, 8px 8px 10px #d4d4d4;
+  border-radius: 20px;
+  font-family: "Century Gothic";
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+@mixin inlineMandatorylabel($selectors...) {
+  @each $var in $selectors {
+    .#{$var} {
+      .form-group {
+        .form-label {
+          .col-form-label {
+            display: inline;
+          }
+        }        
+      }
+    }
+  }
+}
